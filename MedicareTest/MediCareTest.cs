@@ -18,8 +18,45 @@ namespace MedicareTest
             double actualResult = mc.SubsidisedExpense(expense);
 
             //Assert
-            Assert.AreEqual(expectedResult, actualResult)
+            Assert.AreEqual(expectedResult, actualResult, 0.01, "Fail 1145");
 
         }
+
+        [TestMethod]
+        public void SubsidisedExpenseTest0_0()
+        {
+            //Arrange
+
+            MediCare mc = new MediCare();
+            double expense = 0;
+            double expectedResult = 0;
+            //Act
+
+            double actualResult = mc.SubsidisedExpense(expense);
+
+            //Assert
+            Assert.AreEqual(expectedResult, actualResult, 0.01, "Fail 0");
+
+        }
+
+
+        [TestMethod]
+        public void SubsidisedExpenseTestNegativeAmountException()
+        {
+            //Arrange
+
+            MediCare mc = new MediCare();
+            double expense = -100;
+
+            //Act  & Assert
+
+            Assert.ThrowsExactly<ArgumentException>(() =>
+            {
+                mc.SubsidisedExpense(expense);
+            }
+            );
+
+        }
+
     }
 }
