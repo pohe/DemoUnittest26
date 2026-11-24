@@ -15,22 +15,22 @@ namespace DemoUnittest26
             }
             else if (expense < 1045)
             {
-                return 0;
+                return expense - 0;
             }
             else if (expense < 1750)
             {
-                return 50;
+                return expense - 50;
             }
             else if (expense < 3795)
             {
-                return 75;
+                return expense - 75;
             }
             else if (expense < 20636)
             {
-                return 85;
+                return expense- 85;
             }
             else
-                return 100; 
+                return expense- 100; 
         }
     }
 }
